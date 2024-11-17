@@ -51,14 +51,14 @@ export function Message({ id, name, text, position, color }: MessageProps) {
       }}
     >
       <div 
-        className="relative backdrop-blur-sm text-white rounded-lg px-3 py-2 text-sm shadow-lg"
+        className="relative backdrop-blur-sm text-white rounded-lg px-3 py-2 text-sm shadow-lg max-w-[280px] md:max-w-[320px]"
         style={{
           backgroundColor: `${color}CC`,
           marginBottom: '12px'
         }}
       >
         <div className="font-medium text-xs text-white/90 mb-0.5">{name}</div>
-        <div className="break-words leading-snug max-w-[200px]">{text}</div>
+        <div className="break-words leading-snug">{text}</div>
         <div
           className="absolute w-0 h-0"
           style={{

@@ -55,10 +55,6 @@ export default function MessageInput() {
     
     await addMessage(message.trim());
     setMessage('');
-    
-    requestAnimationFrame(() => {
-      inputRef.current?.focus();
-    });
   };
 
   const handleMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -172,7 +168,7 @@ export default function MessageInput() {
               onChange={handleMessageChange}
               placeholder={isInRange ? "メッセージを入力..." : "この場所では発言できません"}
               maxLength={MAX_MESSAGE_LENGTH}
-              className="w-full px-2 py-1 bg-transparent outline-none text-sm text-gray-800 placeholder:text-gray-500"
+              className="w-full px-2 py-1.5 bg-transparent outline-none text-sm text-gray-800 placeholder:text-gray-500"
               disabled={!isInRange}
             />
             <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-gray-400 pointer-events-none">

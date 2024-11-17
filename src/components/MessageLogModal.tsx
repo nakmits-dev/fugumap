@@ -27,17 +27,17 @@ export function MessageLogModal({ onClose }: MessageLogModalProps) {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-start md:items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-start justify-center z-50 p-4 pt-16 md:pt-4 md:items-center">
       <div
         ref={modalRef}
-        className="bg-white rounded-2xl w-full max-w-2xl mt-16 md:mt-0 max-h-[80vh] flex flex-col shadow-xl"
+        className="bg-white rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-xl"
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-lg font-bold">メッセージログ</h2>
           <button
             onClick={onClose}
-            className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             aria-label="閉じる"
           >
             <X size={20} />
