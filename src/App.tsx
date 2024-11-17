@@ -1,6 +1,7 @@
 import React from 'react';
 import Map from './components/Map';
 import MessageInput from './components/MessageInput';
+import { PWAInstallPrompt } from './components/PWAInstallPrompt';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
         <MessageInput />
       </div>
+      <PWAInstallPrompt />
     </div>
   );
 }

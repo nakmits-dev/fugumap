@@ -111,8 +111,8 @@ export default function MessageInput() {
 
   if (!username) {
     return (
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-        <form onSubmit={handleUsernameSubmit} className="w-full max-w-md mx-4">
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <form onSubmit={handleUsernameSubmit} className="w-full max-w-md">
           <div className="bg-white rounded-2xl p-6 shadow-xl">
             <h2 className="text-xl font-bold text-gray-900 mb-2">ようこそ Fugumap へ</h2>
             <p className="text-gray-600 mb-6">チャットを始めるにはニックネームを入力してください</p>
@@ -142,13 +142,13 @@ export default function MessageInput() {
   return (
     <>
       {showTutorial && (
-        <div className="fixed top-1/4 left-1/2 -translate-x-1/2 bg-black/75 text-white px-6 py-4 rounded-xl text-center backdrop-blur-sm z-50 max-w-md mx-4 shadow-lg transition-opacity duration-300">
-          <p className="leading-relaxed">
+        <div className="fixed top-20 left-4 right-4 md:left-1/2 md:-translate-x-1/2 bg-black/75 text-white px-4 py-3 rounded-xl text-center backdrop-blur-sm z-50 md:max-w-md shadow-lg transition-opacity duration-300">
+          <p className="leading-relaxed text-sm">
             {getTutorialContent()}
           </p>
         </div>
       )}
-      <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
+      <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto px-2">
         <div 
           className={`flex items-center gap-2 bg-white/95 backdrop-blur-sm p-1.5 rounded-full shadow-lg ${
             !isInRange ? 'opacity-50' : ''
@@ -164,7 +164,7 @@ export default function MessageInput() {
           >
             {username[0]}
           </div>
-          <div className="relative flex-1">
+          <div className="relative flex-1 min-w-0">
             <input
               ref={inputRef}
               type="text"

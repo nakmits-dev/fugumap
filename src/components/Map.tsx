@@ -110,6 +110,7 @@ export default function Map() {
         draggable: true,
         minZoom: 13,
         maxZoom: 19,
+        gestureHandling: 'greedy',
         styles: [
           {
             featureType: 'poi',

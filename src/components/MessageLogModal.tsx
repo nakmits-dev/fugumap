@@ -11,7 +11,6 @@ export function MessageLogModal({ onClose }: MessageLogModalProps) {
   const { messages } = useMapStore();
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // メッセージを新しい順にソート
   const sortedMessages = [...messages]
     .filter(msg => msg.text !== '(移動)')
     .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
@@ -28,10 +27,10 @@ export function MessageLogModal({ onClose }: MessageLogModalProps) {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-start md:items-center justify-center z-50 p-4">
       <div
         ref={modalRef}
-        className="bg-white rounded-2xl w-full max-w-2xl mx-4 max-h-[80vh] flex flex-col shadow-xl"
+        className="bg-white rounded-2xl w-full max-w-2xl mt-16 md:mt-0 max-h-[80vh] flex flex-col shadow-xl"
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 border-b">
@@ -60,14 +59,14 @@ export function MessageLogModal({ onClose }: MessageLogModalProps) {
                   {msg.username[0]}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline space-x-2">
+                  <div className="flex items-baseline gap-2 flex-wrap">
                     <span className="font-medium">{msg.username}</span>
                     <span className="text-xs text-gray-500">
                       {msg.timestamp.toLocaleTimeString()}
                     </span>
                   </div>
                   <p className="text-gray-700 break-words">{msg.text}</p>
-                  <div className="text-xs text-gray-400 mt-1">
+                  <div className="text-xs text-gray-400 mt-1 truncate">
                     {msg.position.lat.toFixed(6)}, {msg.position.lng.toFixed(6)}
                   </div>
                 </div>

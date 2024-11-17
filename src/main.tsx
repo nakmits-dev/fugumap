@@ -3,6 +3,19 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { useMapStore } from './store';
+import { registerSW } from 'virtual:pwa-register';
+
+// Service Workerの登録
+const updateSW = registerSW({
+  onNeedRefresh() {
+    if (confirm('新しいバージョンが利用可能です。更新しますか？')) {
+      updateSW(true);
+    }
+  },
+  onOfflineReady() {
+    console.log('アプリがオフラインで利用可能になりました');
+  },
+});
 
 // アプリケーションの初期化処理を関数化
 const initializeApp = async () => {
