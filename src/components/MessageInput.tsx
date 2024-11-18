@@ -144,7 +144,7 @@ export default function MessageInput() {
           </p>
         </div>
       )}
-      <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto px-2">
+      <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto">
         <div 
           className={`flex items-center gap-2 bg-white/95 backdrop-blur-sm p-1.5 rounded-full shadow-lg ${
             !isInRange ? 'opacity-50' : ''

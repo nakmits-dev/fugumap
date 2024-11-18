@@ -103,10 +103,6 @@ export default function Map() {
         center: getMapPosition(),
         zoom: 15,
         disableDefaultUI: true,
-        zoomControl: true,
-        zoomControlOptions: {
-          position: google.maps.ControlPosition.RIGHT_CENTER
-        },
         draggable: true,
         minZoom: 13,
         maxZoom: 19,
@@ -164,13 +160,6 @@ export default function Map() {
           />
         )
       ))}
-      <button
-        onClick={() => setShowLogModal(true)}
-        className="fixed top-4 left-4 bg-black/75 text-white px-3 py-1.5 rounded-full text-sm backdrop-blur-sm z-50 hover:bg-black/85 transition-colors"
-      >
-        メッセージ数: {messageCount}
-      </button>
-      {showLogModal && <MessageLogModal onClose={() => setShowLogModal(false)} />}
       {displayableMessages.map(msg => {
         const pixelPosition = calculatePixelPosition(msg.position);
         if (!pixelPosition) return null;

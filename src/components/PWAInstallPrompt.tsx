@@ -33,7 +33,7 @@ export function PWAInstallPrompt() {
   if (!showPrompt) return null;
 
   return (
-    <div className="fixed bottom-24 left-4 right-4 md:left-auto md:right-4 md:w-72 bg-white rounded-lg shadow-lg p-4 z-50">
+    <div className="fixed bottom-[calc(6rem+env(safe-area-inset-bottom))] left-4 right-4 md:left-auto md:right-4 md:w-72 bg-white rounded-lg shadow-lg p-4 z-50">
       <p className="text-sm text-gray-600 mb-3">
         Fugumapをホーム画面に追加して、より快適に利用できます
       </p>
