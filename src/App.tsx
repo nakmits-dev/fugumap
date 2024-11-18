@@ -2,8 +2,8 @@ import React, { useState, useMemo } from 'react';
 import Map from './components/Map';
 import MessageInput from './components/MessageInput';
 import { PWAInstallPrompt } from './components/PWAInstallPrompt';
+import { ShareButton } from './components/ShareButton';
 import { useMapStore } from './store';
-import { MessageLogModal } from './components/MessageLogModal';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <div className="fixed top-4 left-4 z-50">
         <MessageCount />
       </div>
+      <ShareButton />
       <div className="fixed bottom-0 left-0 right-0 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] z-10">
         <MessageInput />
       </div>
