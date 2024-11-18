@@ -9,12 +9,14 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'Fugumap - チャットマップ',
+        name: 'Fugumap - リアルタイム位置情報チャット',
         short_name: 'Fugumap',
         description: 'リアルタイムな位置情報付きチャットアプリ',
         theme_color: '#000000',
         background_color: '#ffffff',
         display: 'standalone',
+        start_url: 'https://fugumap.nakmits.com',
+        scope: 'https://fugumap.nakmits.com',
         icons: [
           {
             src: 'pwa-64x64.png',

@@ -10,7 +10,7 @@ export function ShareButton() {
     const shareData = {
       title: 'Fugumap - リアルタイム位置情報チャット',
       text: 'Fugumapで一緒にチャットしましょう！',
-      url: `https://fugumap.netlify.app/?lat=${userPosition.lat}&lng=${userPosition.lng}`
+      url: `https://fugumap.nakmits.com/?lat=${userPosition.lat}&lng=${userPosition.lng}`
     };
 
     try {

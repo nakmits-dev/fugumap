@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fugumap.netlify.app/sitemap.xml
+Sitemap: https://fugumap.nakmits.com/sitemap.xml
