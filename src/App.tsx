@@ -4,24 +4,7 @@ import MessageInput from './components/MessageInput';
 import { PWAInstallPrompt } from './components/PWAInstallPrompt';
 import { ShareButton } from './components/ShareButton';
 import { useMapStore } from './store';
-
-function App() {
-  return (
-    <>
-      <div className="fixed inset-0">
-        <Map />
-      </div>
-      <div className="fixed top-4 left-4 z-50">
-        <MessageCount />
-      </div>
-      <ShareButton />
-      <div className="fixed bottom-0 left-0 right-0 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] z-10">
-        <MessageInput />
-      </div>
-      <PWAInstallPrompt />
-    </>
-  );
-}
+import { MessageLogModal } from './components/MessageLogModal';
 
 function MessageCount() {
   const { messages } = useMapStore();
@@ -40,6 +23,24 @@ function MessageCount() {
         メッセージ数: {messageCount}
       </button>
       {showLogModal && <MessageLogModal onClose={() => setShowLogModal(false)} />}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <div className="fixed inset-0">
+        <Map />
+      </div>
+      <div className="fixed top-4 left-4 z-50">
+        <MessageCount />
+      </div>
+      <ShareButton />
+      <div className="fixed bottom-0 left-0 right-0 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] z-10">
+        <MessageInput />
+      </div>
+      <PWAInstallPrompt />
     </>
   );
 }
